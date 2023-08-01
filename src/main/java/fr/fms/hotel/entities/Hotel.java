@@ -22,6 +22,7 @@ public class Hotel implements Serializable {
     private String phone;
     private int star;
     private int nbRoom;
+    private String photo;
 
     @OneToMany(fetch = FetchType.EAGER)
     @JsonIgnore

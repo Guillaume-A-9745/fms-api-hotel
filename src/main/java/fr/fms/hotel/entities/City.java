@@ -18,6 +18,7 @@ public class City implements Serializable {
     private Long id;
 
     private String name;
+    private String photo;
 
     @OneToMany(fetch = FetchType.EAGER)
     @JsonIgnore
