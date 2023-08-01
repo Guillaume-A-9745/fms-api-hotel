@@ -8,11 +8,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 
 @CrossOrigin("*")
 @RestController
@@ -64,5 +67,51 @@ public class CityController {
         }
         log.info("file upload ok {}",id);
         return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping(value = "/cities/{id}")
+    public ResponseEntity<?> deleteCity(@PathVariable("id") Long id) {
+        try {
+            hotelService.deleteCity(id);
+        } catch (Exception e) {
+            log.error("Problème avec la suppression de la ville d'id : {}", id);
+            return ResponseEntity.internalServerError().body(e.getCause());
+        }
+        log.info("Suppression de la ville d'id : {}", id);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/cities/{id}")
+    public City getCityById(@PathVariable("id") Long id) {
+        return hotelService.readCity(id).orElseThrow( () -> new RuntimeException("Id de ville " + id + " n'existe pas"));
+    }
+
+    @PostMapping("/cities")
+    public ResponseEntity<City> saveCity(@RequestBody City c) {
+        City city = hotelService.saveCity(c);
+        if (Objects.isNull(city)) return ResponseEntity.noContent().build();
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(city.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
+
+    @PutMapping("/cities")
+    public ResponseEntity<City> updateCity(@RequestBody City c){
+        City city = hotelService.readCity(c.getId()).get();
+        city.setName(c.getName());
+        city.setPhoto(c.getPhoto());
+
+        if(Objects.isNull(hotelService.saveCity(city))) {
+            return ResponseEntity.noContent().build();
+        }
+        URI location =  ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(city.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
     }
 }
