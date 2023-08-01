@@ -1,6 +1,7 @@
 package fr.fms.hotel.web;
 
 import fr.fms.hotel.entities.City;
+import fr.fms.hotel.entities.Hotel;
 import fr.fms.hotel.service.HotelServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class CityController {
         return null;
     }
 
-    @GetMapping(path="/photo/{id}",produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(path="/cities/photo/{id}",produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<?> getPhoto(@PathVariable("id") Long id) throws IOException {
         byte[] file = null;
         try {
@@ -53,7 +54,7 @@ public class CityController {
         return ResponseEntity.ok().body(file);
     }
 
-    @PostMapping(path="/photo/{id}")
+    @PostMapping(path="/cities/photo/{id}")
     public ResponseEntity<?> uploadPhoto(MultipartFile file, @PathVariable Long id) throws Exception {
         try {
             City city= hotelService.readCity(id).get();
@@ -113,5 +114,10 @@ public class CityController {
                 .buildAndExpand(city.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @GetMapping("/cities/{id}/hotels")
+    public List<Hotel> allHotelByCityId(@PathVariable("id") Long id) {
+        return hotelService.getHotelsByCity(id);
     }
 }

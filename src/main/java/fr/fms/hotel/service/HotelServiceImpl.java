@@ -84,4 +84,8 @@ public class HotelServiceImpl implements HotelService {
     public List<City> getCitiesByKeyword(String keyword) {
         return cityRepository.findByNameContains(keyword);
     }
+
+    public List<Hotel> getHotelsByCity(Long id) {
+        return hotelRepository.findByCityId(id);
+    }
 }
