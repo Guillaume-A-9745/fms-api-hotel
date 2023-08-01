@@ -9,10 +9,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.Objects;
 
 @CrossOrigin("*")
 @RestController
@@ -21,6 +25,18 @@ public class HotelController {
     @Autowired
     private HotelServiceImpl hotelService;
 
+    @GetMapping("hotels")
+    public List<Hotel> allHotels() { return hotelService.getHotel(); }
+
+    @GetMapping("hotels/search/{keyword}")
+    public List<Hotel> searchByKeyword(@PathVariable String keyword) {
+        try {
+            return hotelService.getHotelsbyKeyword(keyword);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return null;
+    }
 
     @GetMapping(path="/hotels/photo/{id}",produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<?> getPhoto(@PathVariable("id") Long id) throws IOException {
@@ -52,5 +68,55 @@ public class HotelController {
         }
         log.info("file upload ok {}",id);
         return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping(value = "/hotels/{id}")
+    public ResponseEntity<?> deleteHotel(@PathVariable("id") Long id) {
+        try {
+            hotelService.deleteHotel(id);
+        } catch (Exception e) {
+            log.error("Problème avec la suppression de l'hotel d'id : {}", id);
+            return ResponseEntity.internalServerError().body(e.getCause());
+        }
+        log.info("Suppression de l'hotel d'id : {}", id);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/hotels/{id}")
+    public Hotel getHotelById(@PathVariable("id") Long id) {
+        return hotelService.readHotel(id).orElseThrow( () -> new RuntimeException("Id de l'hotel " + id + " n'existe pas"));
+    }
+
+    @PostMapping("/hotels")
+    public ResponseEntity<Hotel> saveHotel(@RequestBody Hotel h) {
+        Hotel hotel = hotelService.saveHotel(h);
+        if (Objects.isNull(hotel)) return ResponseEntity.noContent().build();
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(hotel.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
+
+    @PutMapping("/hotels")
+    public ResponseEntity<Hotel> updateHotel(@RequestBody Hotel h){
+        Hotel hotel = hotelService.readHotel(h.getId()).get();
+        hotel.setName(h.getName());
+        hotel.setAddress(h.getAddress());
+        hotel.setPhone(h.getPhone());
+        hotel.setStar(h.getStar());
+        hotel.setNbRoom(h.getNbRoom());
+        hotel.setPhoto(h.getPhoto());
+
+        if(Objects.isNull(hotelService.saveHotel(hotel))) {
+            return ResponseEntity.noContent().build();
+        }
+        URI location =  ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(hotel.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
     }
 }
