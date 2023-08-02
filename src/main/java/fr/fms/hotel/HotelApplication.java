@@ -37,125 +37,125 @@ public class HotelApplication implements CommandLineRunner {
 		City pau = cityRepository.save(new City(null,"Pau","unknown.png",null));
 
 		Hotel paris1 = hotelRepository.save(new Hotel(null,"paris1","1 rue de la lumière","0102030405",2,4,"unknown.png",null,paris));
-		roomRepository.save(new Room(null,01,55.00,false,paris1,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,paris1,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,paris1,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,paris1,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,paris1,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,paris1,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,paris1,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,paris1,"unknown.png"));
 
 		Hotel paris2 = hotelRepository.save(new Hotel(null,"paris2","1 rue de la lumière","0102030405",2,4,"unknown.png",null,paris));
-		roomRepository.save(new Room(null,01,55.00,false,paris2,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,paris2,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,paris2,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,paris2,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,paris2,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,paris2,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,paris2,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,paris2,"unknown.png"));
 
 		Hotel paris3 = hotelRepository.save(new Hotel(null,"paris3","1 rue de la lumière","0102030405",2,4,"unknown.png",null,paris));
-		roomRepository.save(new Room(null,01,55.00,false,paris3,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,paris3,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,paris3,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,paris3,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,paris3,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,paris3,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,paris3,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,paris3,"unknown.png"));
 
 		Hotel paris4 = hotelRepository.save(new Hotel(null,"paris4","1 rue de la lumière","0102030405",2,4,"unknown.png",null,paris));
-		roomRepository.save(new Room(null,01,55.00,false,paris4,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,paris4,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,paris4,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,paris4,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,paris4,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,paris4,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,paris4,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,paris4,"unknown.png"));
 
 
 		Hotel bordeaux1 = hotelRepository.save(new Hotel(null,"bordeaux1","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bordeaux));
-		roomRepository.save(new Room(null,01,55.00,false,bordeaux1,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bordeaux1,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bordeaux1,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bordeaux1,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bordeaux1,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bordeaux1,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bordeaux1,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bordeaux1,"unknown.png"));
 
 		Hotel bordeaux2 = hotelRepository.save(new Hotel(null,"bordeaux2","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bordeaux));
-		roomRepository.save(new Room(null,01,55.00,false,bordeaux2,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bordeaux2,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bordeaux2,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bordeaux2,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bordeaux2,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bordeaux2,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bordeaux2,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bordeaux2,"unknown.png"));
 
 		Hotel bordeaux3 = hotelRepository.save(new Hotel(null,"bordeaux3","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bordeaux));
-		roomRepository.save(new Room(null,01,55.00,false,bordeaux3,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bordeaux3,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bordeaux3,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bordeaux3,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bordeaux3,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bordeaux3,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bordeaux3,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bordeaux3,"unknown.png"));
 
 		Hotel bordeaux4 = hotelRepository.save(new Hotel(null,"bordeaux4","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bordeaux));
-		roomRepository.save(new Room(null,01,55.00,false,bordeaux4,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bordeaux4,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bordeaux4,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bordeaux4,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bordeaux4,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bordeaux4,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bordeaux4,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bordeaux4,"unknown.png"));
 
 
 		Hotel bayonne1 = hotelRepository.save(new Hotel(null,"bayonne1","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bayonne));
-		roomRepository.save(new Room(null,01,55.00,false,bayonne1,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bayonne1,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bayonne1,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bayonne1,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bayonne1,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bayonne1,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bayonne1,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bayonne1,"unknown.png"));
 
 		Hotel bayonne2 = hotelRepository.save(new Hotel(null,"bayonne2","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bayonne));
-		roomRepository.save(new Room(null,01,55.00,false,bayonne2,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bayonne2,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bayonne2,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bayonne2,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bayonne2,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bayonne2,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bayonne2,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bayonne2,"unknown.png"));
 		Hotel bayonne3 = hotelRepository.save(new Hotel(null,"bayonne3","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bayonne));
-		roomRepository.save(new Room(null,01,55.00,false,bayonne3,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bayonne3,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bayonne3,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bayonne3,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bayonne3,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bayonne3,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bayonne3,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bayonne3,"unknown.png"));
 		Hotel bayonne4 = hotelRepository.save(new Hotel(null,"bayonne4","1 rue de la lumière","0102030405",2,4,"unknown.png",null,bayonne));
-		roomRepository.save(new Room(null,01,55.00,false,bayonne4,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,bayonne4,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,bayonne4,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,bayonne4,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,bayonne4,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,bayonne4,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,bayonne4,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,bayonne4,"unknown.png"));
 
 
 		Hotel biarritz1 = hotelRepository.save(new Hotel(null,"biarritz1","1 rue de la lumière","0102030405",2,4,"unknown.png",null,biarritz));
-		roomRepository.save(new Room(null,01,55.00,false,biarritz1,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,biarritz1,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,biarritz1,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,biarritz1,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,biarritz1,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,biarritz1,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,biarritz1,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,biarritz1,"unknown.png"));
 
 		Hotel biarritz2 = hotelRepository.save(new Hotel(null,"biarritz2","1 rue de la lumière","0102030405",2,4,"unknown.png",null,biarritz));
-		roomRepository.save(new Room(null,01,55.00,false,biarritz2,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,biarritz2,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,biarritz2,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,biarritz2,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,biarritz2,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,biarritz2,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,biarritz2,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,biarritz2,"unknown.png"));
 
 		Hotel biarritz3 = hotelRepository.save(new Hotel(null,"biarritz3","1 rue de la lumière","0102030405",2,4,"unknown.png",null,biarritz));
-		roomRepository.save(new Room(null,01,55.00,false,biarritz3,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,biarritz3,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,biarritz3,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,biarritz3,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,biarritz3,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,biarritz3,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,biarritz3,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,biarritz3,"unknown.png"));
 
 		Hotel biarritz4 = hotelRepository.save(new Hotel(null,"biarritz4","1 rue de la lumière","0102030405",2,4,"unknown.png",null,biarritz));
-		roomRepository.save(new Room(null,01,55.00,false,biarritz4,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,biarritz4,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,biarritz4,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,biarritz4,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,biarritz4,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,biarritz4,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,biarritz4,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,biarritz4,"unknown.png"));
 
 
 		Hotel pau1 = hotelRepository.save(new Hotel(null,"pau1","1 rue de la lumière","0102030405",2,4,"unknown.png",null,pau));
-		roomRepository.save(new Room(null,01,55.00,false,pau1,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,pau1,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,pau1,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,pau1,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,pau1,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,pau1,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,pau1,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,pau1,"unknown.png"));
 
 		Hotel pau2 = hotelRepository.save(new Hotel(null,"pau2","1 rue de la lumière","0102030405",2,4,"unknown.png",null,pau));
-		roomRepository.save(new Room(null,01,55.00,false,pau2,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,pau2,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,pau2,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,pau2,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,pau2,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,pau2,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,pau2,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,pau2,"unknown.png"));
 
 		Hotel pau3 = hotelRepository.save(new Hotel(null,"pau3","1 rue de la lumière","0102030405",2,4,"unknown.png",null,pau));
-		roomRepository.save(new Room(null,01,55.00,false,pau3,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,pau3,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,pau3,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,pau3,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,pau3,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,pau3,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,pau3,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,pau3,"unknown.png"));
 
 		Hotel pau4 = hotelRepository.save(new Hotel(null,"pau4","1 rue de la lumière","0102030405",2,4,"unknown.png",null,pau));
-		roomRepository.save(new Room(null,01,55.00,false,pau4,"unknown.png"));
-		roomRepository.save(new Room(null,02,65.00,false,pau4,"unknown.png"));
-		roomRepository.save(new Room(null,03,55.00,false,pau4,"unknown.png"));
-		roomRepository.save(new Room(null,04,75.00,false,pau4,"unknown.png"));
+		roomRepository.save(new Room(null,01,55.00,false,1,pau4,"unknown.png"));
+		roomRepository.save(new Room(null,02,65.00,false,1,pau4,"unknown.png"));
+		roomRepository.save(new Room(null,03,55.00,false,1,pau4,"unknown.png"));
+		roomRepository.save(new Room(null,04,75.00,false,1,pau4,"unknown.png"));
 	}
 }

@@ -92,4 +92,9 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> getHotelsbyKeyword(String keyword) {
         return hotelRepository.findByNameContains(keyword);
     }
+
+    public List<Room> getRoomByHotel(Long id) {
+        return roomRepository.findByHotelId(id);
+    }
+
 }

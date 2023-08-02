@@ -2,6 +2,7 @@ package fr.fms.hotel.web;
 
 import fr.fms.hotel.entities.City;
 import fr.fms.hotel.entities.Hotel;
+import fr.fms.hotel.entities.Room;
 import fr.fms.hotel.service.HotelServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -108,6 +109,7 @@ public class HotelController {
         hotel.setStar(h.getStar());
         hotel.setNbRoom(h.getNbRoom());
         hotel.setPhoto(h.getPhoto());
+        hotel.setCity(h.getCity());
 
         if(Objects.isNull(hotelService.saveHotel(hotel))) {
             return ResponseEntity.noContent().build();
@@ -118,5 +120,10 @@ public class HotelController {
                 .buildAndExpand(hotel.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @GetMapping("/hotels/{id}/rooms")
+    public List<Room> allRoomByHotelId(@PathVariable("id") Long id) {
+        return hotelService.getRoomByHotel(id);
     }
 }

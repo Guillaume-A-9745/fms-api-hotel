@@ -19,6 +19,7 @@ public class Room implements Serializable {
     private int number;
     private double price;
     private boolean reserved;
+    private int nbDay;
 
     @ManyToOne
     private Hotel hotel;
