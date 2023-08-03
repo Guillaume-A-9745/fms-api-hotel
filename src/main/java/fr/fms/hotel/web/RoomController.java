@@ -17,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -50,7 +51,7 @@ public class RoomController {
         try {
             Room room= hotelService.readRoom(id).get();
             room.setPhoto(file.getOriginalFilename());
-            Files.write(Paths.get(System.getProperty("user.home")+"/super-hotel/hotels/" + room.getPhoto()),file.getBytes());
+            Files.write(Paths.get(System.getProperty("user.home")+"/super-hotel/rooms/" + room.getPhoto()),file.getBytes());
             hotelService.saveRoom(room);
         }
         catch(Exception e) {
@@ -96,6 +97,26 @@ public class RoomController {
         room.setNumber(r.getNumber());
         room.setPrice(r.getPrice());
         room.setReserved(r.isReserved());
+        room.setHotel(r.getHotel());
+        room.setPhoto(r.getPhoto());
+
+        if(Objects.isNull(hotelService.saveRoom(room))) {
+            return ResponseEntity.noContent().build();
+        }
+        URI location =  ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(room.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
+
+    @PutMapping("/room")
+    public ResponseEntity<Room> updateRoomStatus(@RequestBody Room r){
+        Room room = hotelService.readRoom(r.getId()).get();
+        room.setNumber(r.getNumber());
+        room.setPrice(r.getPrice());
+        room.setReserved(true);
         room.setHotel(r.getHotel());
         room.setPhoto(r.getPhoto());
 
